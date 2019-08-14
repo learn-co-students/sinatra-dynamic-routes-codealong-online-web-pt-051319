@@ -14,5 +14,12 @@ class App < Sinatra::Base
   end
 
   # Code your final two routes here:
+  get('/goodbye/:name'){ "Goodbye, #{params[:name]}."}
+
+  get('/multiply/:num1/:num2'){ multiply(params[:num1], params[:num2]) }
+
+  def multiply(a,b)
+    (a.to_f * b.to_f).to_s
+  end
 
 end
